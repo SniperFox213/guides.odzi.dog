@@ -21,7 +21,8 @@
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "sirv": "^1.0.0",
-    "svelte-preprocess": "^4.3.2"
+    "svelte-preprocess": "^4.3.2",
+    "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

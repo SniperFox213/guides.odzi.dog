@@ -6,9 +6,9 @@
   export let guide = {};
 </script>
 
-<div class="w-1/4 relative px-6 py-4">
+<div class="w-full md:w-1/3 lg:w-1/4 relative px-6 py-4">
   <div style="padding-top: 150%;" class="w-full relative">
-    <div on:mouseover={() => hovered = true } on:mouseout={(e) => hovered = false } class="cursor-pointer transition duration-200 easy-in-out absolute inset-0 flex items-center justify-center w-full h-full rounded-lg bg-black shadow-md transform { hovered ? `scale-110 shadow-xl ${ guide.type == "answer" ? "bg-indigo-400" : guide.type == "article" ? "bg-yellow-400" : "bg-pink-400" } text-white` : "" }">
+    <div on:mouseover={() => hovered = true } on:mouseout={(e) => hovered = false } class="cursor-pointer transition duration-200 easy-in-out absolute inset-0 flex items-center justify-center w-full h-full rounded-lg bg-gray-900 shadow-md transform { hovered ? `scale-110 shadow-xl ${ guide.type == "answer" ? "bg-indigo-400" : guide.type == "article" ? "bg-yellow-400" : "bg-pink-400" } text-white` : "" }">
 
       <!-- Verified Badge + Setting button -->
       <div class="absolute inset-x-0 top-0 w-full flex items-center justify-between px-3 py-2">

@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       height: {
+        '300vh': '300vh',
+        '200vh': '200vh',
         '100vh': '100vh',
         '85vh': '85vh',
         '75vh': '75vh',
@@ -23,8 +25,17 @@ module.exports = {
         '1': '1px'
       },
 
+      padding: {
+        "50per": "50%",
+        "80per": "80%"
+      },
+
+      minHeight: {
+        '2screen': '200vh'
+      },
+
       minWidth: {
-        'screen': '100vw'
+        'screen': '100vw',
       }
     },
   },
