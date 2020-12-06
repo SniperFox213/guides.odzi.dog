@@ -141,7 +141,7 @@
         <img class="w-8 h-8 border-1 border-gray-100 border-solid rounded-full" src="https://lh3.googleusercontent.com/a-/AOh14GhGDpOQbtDd97mLGUnsy49Y9idmSK_rk6rxJeu7nA=s96-c" alt="User Avatar">
       { :else }
         <button on:click={(e) => {
-          goto("https://authed.unfull.ml/callback?url=http://localhost:3000/authorize/:token");
+          goto("https://authed.unfull.ml/callback?url=https://guides.odzi.dog/authorize/:token");
         }} class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm bg-white text-gray-800 hover:bg-gray-200 hover:text-black hover:shadow-md">
           Авторизоваться
         </button>
@@ -157,7 +157,7 @@
       <div class="w-full md:w-3/5 px-8 h-full relative">
 
         <div class="pt-80per md:pt-50per relative w-full">
-          <div data-tilt data-tilt-scale="1.05" data-tilt-reverse="true" data-tilt-reset="true" data-tilt-speed="800" data-tilt-glare="true" class="absolute inset-0 w-full h-full bg-white rounded-lg shadow-md">
+          <div data-tilt data-tilt-scale="1.05" data-tilt-reverse="true" data-tilt-reset="true" data-tilt-speed="800" class="absolute inset-0 w-full h-full bg-white rounded-lg shadow-md">
             
             <div class="w-full h-full flex flex-col justify-center items-center">
               <!-- Logotype -->
@@ -165,7 +165,7 @@
 
               <!-- Some Texts -->
               <div class="mt-2 w-2/3 text-center">
-                <p class="text-sm text-gray-800"><span>odzi.dog</span> - это сеть сервисов, которые были созданны обладателями собак, ветеринарами и зоопсихологами для людей и их питомцев.</p>
+                <p class="text-sm text-gray-800"><span class="border-b-1 border-pink-400 border-solid">odzi.dog</span> - это сеть сервисов, которые были созданны обладателями собак, ветеринарами и зоопсихологами для людей и их питомцев.</p>
               </div>
 
               <!-- Buttons -->
