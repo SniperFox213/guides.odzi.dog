@@ -55,8 +55,8 @@
         </div>
 
         <!-- Heading + Description -->
-        <h1 class="text-2xl text-white">{ guide.title }</h1>
-        <h2 class="text-xs text-gray-100">{ guide.description }</h2>
+        <h1 class="text-xl text-white">{ guide.title }</h1>
+        <h2 class="text-sm text-gray-100">{ guide.description }</h2>
       </div>
 
       <!-- Guide's Views + Likes -->

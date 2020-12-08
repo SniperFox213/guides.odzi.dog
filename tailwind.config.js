@@ -5,6 +5,16 @@ module.exports = {
   },
   purge: [],
   theme: {
+    fontSize: {
+      "extra-xs": ['0.6vw'],
+      xs: ['0.75vw'],
+      sm: ['0.85vw'],
+      base: ['1vw'],
+      xl: ['1.5vw'],
+      "2xl": ['2vw'],
+      "3xl": ['3.5vw']
+    },
+
     extend: {
       height: {
         '300vh': '300vh',
@@ -15,10 +25,6 @@ module.exports = {
         '70vh': '70vh',
         '65vh': '65vh',
         '55vh': '55vh'
-      },
-
-      fontSize: {
-        'extra-xs': '0.65rem'
       },
 
       borderWidth: {

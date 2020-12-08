@@ -63,7 +63,7 @@
             <img class="w-8 h-8 border-1 border-gray-100 border-solid rounded-full" src="https://lh3.googleusercontent.com/a-/AOh14GhGDpOQbtDd97mLGUnsy49Y9idmSK_rk6rxJeu7nA=s96-c" alt="User Avatar">
           { :else }
             <button on:click={(e) => {
-              goto("https://authed.unfull.ml/callback?url=http://localhost:3000/authorize/:token");
+              goto("https://authed.unfull.ml/callback?url=https://guides.odzi.dog/authorize/:token");
             }} class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm bg-white text-gray-800 hover:bg-gray-200 hover:text-black hover:shadow-md">
               Авторизоваться
             </button>
