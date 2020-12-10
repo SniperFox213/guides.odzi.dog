@@ -13,6 +13,8 @@
 	import { goto } from "@sapper/app";
 
 	// Importing components
+  import Header from "../components/Layout/Header/index.svelte";
+
 	import GuideCard from "../components/guideCard.svelte";
   import SmallCard from "../components/landing/smallCard.svelte";
 
@@ -38,38 +40,7 @@
     <!-- Main -->
     <main class="h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-12">
       <!-- Title -->
-      <div class="w-full flex items-center justify-between py-4">
-        <h1 class="text-3xl font-medium text-black">Исследовать</h1>
-        
-        <!-- Some Links -->
-        <div class="flex items-center">
-          <div class="mr-6 text-xs opacity-75">
-            <a class="mx-2" href="/">Главная</a>
-            <a class="mx-2" href="/courses">Мои курсы</a>
-            <a class="mx-2" href="/library">Библиотека</a>
-            <a class="mx-2" href="https://odzi.dog">odzi.dog</a>
-          </div>
-
-          { #if $profile.id != 0 }
-            <!-- Dog Accounts -->
-            <button class="w-8 h-8 border-1 border-solid border-pink-400 rounded-full flex items-center justify-center bg-white">
-              <img style="height: 1.1rem; width: 1.1rem;" src="./icons/dog.png" alt="Dog Icon">
-            </button>
-
-            <!-- Divider -->
-            <div style="height: 1.6rem; width: 1px;" class="rounded-lg bg-gray-600 mx-2"></div>
-
-            <!-- Avatar -->
-            <img class="w-8 h-8 border-1 border-gray-100 border-solid rounded-full" src="https://lh3.googleusercontent.com/a-/AOh14GhGDpOQbtDd97mLGUnsy49Y9idmSK_rk6rxJeu7nA=s96-c" alt="User Avatar">
-          { :else }
-            <button on:click={(e) => {
-              goto("https://authed.unfull.ml/callback?url=https://guides.odzi.dog/authorize/:token");
-            }} class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm bg-white text-gray-800 hover:bg-gray-200 hover:text-black hover:shadow-md">
-              Авторизоваться
-            </button>
-          { /if }
-        </div>
-      </div>
+      <Header page="index" />
 
       <!-- Library -->
       <div class="flex flex-wrap w-full">

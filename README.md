@@ -5,9 +5,8 @@ This project is a mashup of two different applications: *frontend application* a
 ## Front-end Structure
 
 - /src
-- - ../components/..   *Applications components*
-- - ../routes/..       *All Routes*
-- - ../stores/..       *Svelte Stores location*
-- - ..other files..    *Other needed (or not) files*
+  - ../components/..   *Applications components*
+  - ../routes/..       *All Routes*
+  - ../stores/..       *Svelte Stores location*
+  - ..other files..    *Other needed (or not) files*
 - /static             *Contains all static images and icons*
-

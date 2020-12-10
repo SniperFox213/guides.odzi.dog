@@ -3,9 +3,13 @@
   import { goto } from "@sapper/app";
   import GuideCard from "../components/guideCard.svelte";
 
-  import tilt from "vanilla-tilt";
-
   import profile from "../stores/profile.js";
+
+  // Importing components
+  import Header from "../components/Layout/Header/index.svelte";
+
+  import Button from "../components/Controls/Button/index.svelte";
+  import Badge from "../components/Badge/index.svelte";
 
   let results = [
 		{
@@ -109,45 +113,7 @@
 
 <main class="min-h-screen w-full bg-gray-100 relative">
   <!-- Header -->
-  <header style="z-index: 999;" class="fixed inset-x-0 top-0 w-full py-3 bg-white flex items-center justify-between px-6">
-    <!-- Logotype -->
-    <div class="w-1/4">
-      <img style="height: 2rem;" src="./logotype/odzi-guides-black.svg" alt="odzi.guides logotype">
-    </div>
-
-    <!-- Search box
-    <div class="w-2/4 flex justify-evenly">
-    </div> -->
-
-    <!-- Account + Dogs Accounts -->
-    <div class="hidden md:flex items-center justify-end w-2/4">
-      <div class="flex mr-6 text-xs opacity-75">
-        <a class="mx-2" href="/">Главная</a>
-        <a class="mx-2" href="/courses">Мои курсы</a>
-        <a class="mx-2" href="/library">Библиотека</a>
-        <a class="mx-2" href="https://odzi.dog">odzi.dog</a>
-      </div>
-
-      { #if $profile.id != 0 }
-        <!-- Dog Accounts -->
-        <button class="w-8 h-8 border-1 border-solid border-pink-400 rounded-full flex items-center justify-center bg-white">
-          <img style="height: 1.1rem; width: 1.1rem;" src="./icons/dog.png" alt="Dog Icon">
-        </button>
-
-        <!-- Divider -->
-        <div style="height: 1.6rem; width: 1px;" class="rounded-lg bg-gray-600 mx-2"></div>
-
-        <!-- Avatar -->
-        <img class="w-8 h-8 border-1 border-gray-100 border-solid rounded-full" src="https://lh3.googleusercontent.com/a-/AOh14GhGDpOQbtDd97mLGUnsy49Y9idmSK_rk6rxJeu7nA=s96-c" alt="User Avatar">
-      { :else }
-        <button on:click={(e) => {
-          goto("https://authed.unfull.ml/callback?url=https://guides.odzi.dog/authorize/:token");
-        }} class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm bg-white text-gray-800 hover:bg-gray-200 hover:text-black hover:shadow-md">
-          Авторизоваться
-        </button>
-      { /if }
-    </div>
-  </header>
+  <Header page="library" />
 
   <!-- Hero-Tutorial -->
   <section style="background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);" class="w-full pt-32 md:pt-0 pb-24 md:pb-0 h-auto md:h-screen flex justify-center items-center relative">
@@ -188,9 +154,9 @@
       <!-- Text -->
       <div class="w-full mt-16 md:mt-0 md:w-2/5 md:ml-8 px-8 md:px-0 relative">
         <!-- Badge -->
-        <span style="border-radius: 1.5rem;" class="px-3 py-1 text-extra-xs bg-white text-black opacity-50">
+        <Badge classes="text-extra-xs opacity-50">
           Знакомство с сервисом
-        </span>
+        </Badge>
 
         <div class="mb-6 mt-2">
           <h1 class="text-2xl text-white font-medium">Что тут можно найти?</h1>
@@ -199,13 +165,13 @@
 
         <!-- Buttons -->
         <div class="w-full flex justify-between">
-          <button class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm border-1 border-white bg-transparent text-white hover:border-none hover:bg-gray-200 hover:text-black hover:shadow-md">
+          <Button type="ghost">
             Скрыть
-          </button>
+          </Button>
 
-          <button class="transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm bg-white text-gray-800 hover:bg-gray-200 hover:text-black hover:shadow-md">
+          <Button>
             Дальше
-          </button>
+          </Button>
         </div>
       </div>
     </div>

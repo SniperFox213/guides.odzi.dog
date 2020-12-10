@@ -3,6 +3,7 @@
 	import styles from "../components/styles.svelte";
 
 	import { fade } from "svelte/transition";
+  import tilt from "vanilla-tilt";
 
 	// Importing some components and then
 	// performing some needed actions
@@ -52,8 +53,8 @@
 		<!-- Logotype -->
 		<img id="logo" style="height: 2rem;" src="./logotype/white-full.svg" alt="odzi.network logotype">
 	</div>
+{ :else }
+	<main style="z-index: 1; font-family: 'Raleway', sans-serif;" class="relative">
+		<slot></slot>
+	</main>
 { /if }
-
-<main style="z-index: 1; font-family: 'Raleway', sans-serif;" class="relative">
-	<slot></slot>
-</main>

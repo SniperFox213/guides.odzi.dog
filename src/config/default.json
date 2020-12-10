@@ -1,0 +1,30 @@
+{
+  "layout": {
+    "header": {
+      "default": {
+        "items": [
+          {
+            "page": "index",
+            "name": "Главная",
+            "href": "/"
+          },
+          {
+            "page": "courses",
+            "name": "Мои Курсы",
+            "href": "/courses"
+          },
+          {
+            "page": "library",
+            "name": "Библиотека",
+            "href": "/library"
+          },
+          {
+            "page": "odzi.dog",
+            "name": "odzi.dog",
+            "href": "https://odzi.dog"
+          }
+        ]
+      }
+    }
+  }
+}
