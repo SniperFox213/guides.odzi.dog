@@ -17,7 +17,9 @@
 </script>
 
 <!-- Main Application Window -->
-<main class="w-full h-full relative">
+<main class="w-full h-full relative bg-gray-200">
   <!-- Header -->
-  <Header type="studio" />
+  <Header page="studio" />
+
+  <!--  -->
 </main>

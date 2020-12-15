@@ -31,7 +31,7 @@
 
 <!-- Importing some fonts -->
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Caveat&family=Manrope:wght@300;400;500;600&display=swap');
 
 	#logo {
 		animation: pulse 2s infinite ease-in-out;
@@ -49,12 +49,12 @@
 </svelte:head>
 
 { #if $profile.id == null }
-	<div transition:fade style="z-index: 2;" class="fixed inset-0 w-full h-full bg-black flex justify-center items-center">
+	<div transition:fade style="z-index: 2;" class="fixed inset-0 w-full h-full bg-white flex justify-center items-center">
 		<!-- Logotype -->
-		<img id="logo" style="height: 2rem;" src="./logotype/white-full.svg" alt="odzi.network logotype">
+		<img id="logo" style="height: 2rem;" src="./logotype/black-full.svg" alt="odzi.network logotype">
 	</div>
 { :else }
-	<main style="z-index: 1; font-family: 'Raleway', sans-serif;" class="relative">
+	<main style="z-index: 1; font-family: 'Manrope', sans-serif;" class="relative">
 		<slot></slot>
 	</main>
 { /if }

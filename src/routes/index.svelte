@@ -36,7 +36,7 @@
 </style>
 
 {#if loaded}
-	<main in:fade style="font-family: 'Manrope', sans-serif;" class="bg-gray-100 w-full relative">
+	<main in:fade class="bg-gray-100 w-full">
     <!-- Main -->
     <main class="h-screen w-full flex flex-col items-center justify-center px-4 md:px-8 lg:px-12">
       <!-- Title -->

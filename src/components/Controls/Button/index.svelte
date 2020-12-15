@@ -29,11 +29,11 @@
 </script>
 
 { #if type == "default" }
-  <DefaultButton bind:hovered={hovered} options={{ textColor, hTextColor, backgroundColor, hBackgroundColor, classes }}>
+  <DefaultButton on:click bind:hovered={hovered} options={{ textColor, hTextColor, backgroundColor, hBackgroundColor, classes }}>
     <slot></slot>
   </DefaultButton>
 { :else if type == "ghost" }
-  <GhostButton bind:hovered={hovered} options={{ borderColor, hBorderColor, textColor, hTextColor, hBackgroundColor, classes }}>
+  <GhostButton on:click bind:hovered={hovered} options={{ borderColor, hBorderColor, textColor, hTextColor, hBackgroundColor, classes }}>
     <slot></slot>
   </GhostButton>
 { /if }

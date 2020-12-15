@@ -28,6 +28,6 @@
 </script>
 
 <!-- Button's Layout -->
-<button on:mouseover={(e) => hovered = true} on:mouseout={(e) => hovered = false} class="{ options.classes } border-1 border-{ options.borderColor } text-{ options.textColor } hover:text-{ options.hTextColor } hover:bg-{ options.hBackgroundColor } hover:border-{ options.hBorderColor } transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm hover:shadow-md">
+<button on:click on:mouseover={(e) => hovered = true} on:mouseout={(e) => hovered = false} class="{ options.classes } border-1 border-{ options.borderColor } text-{ options.textColor } hover:text-{ options.hTextColor } hover:bg-{ options.hBackgroundColor } hover:border-{ options.hBorderColor } transition duration-300 ease-in-out py-1 px-4 rounded-md text-sm hover:shadow-md">
   <slot></slot>
 </button>

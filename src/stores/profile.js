@@ -39,20 +39,20 @@ function createProfileStore() {
             store.provider = data.profile.provider;
             
             store.pets = [
-              {
-                id: 1,
+              // {
+              //   id: 1,
 
-                name: "Хантер",
-                avatar: "https://taiken.co/uploads/2020/07/Akita-Inu-scaled-e1595821902820-1200x702.jpg",
+              //   name: "Хантер",
+              //   avatar: "https://taiken.co/uploads/2020/07/Akita-Inu-scaled-e1595821902820-1200x702.jpg",
 
-                breed: "Akita-Inu",
+              //   breed: "Akita-Inu",
                 
-                division: 3,
-                level: 1,
+              //   division: 3,
+              //   level: 1,
 
-                courses: [],
-                medals: []
-              }
+              //   courses: [],
+              //   medals: []
+              // }
             ];
 
             setTimeout(() => {

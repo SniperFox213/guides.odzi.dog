@@ -24,6 +24,25 @@
             "href": "https://odzi.dog"
           }
         ]
+      },
+      "studio": {
+        "items": [
+          {
+            "page": "index",
+            "name": "Дашборд",
+            "href": "/studio"
+          },
+          {
+            "page": "myMaterials",
+            "name": "Мои Материалы",
+            "href": "/studio/posts"
+          },
+          {
+            "page": "statistics",
+            "name": "Статистика",
+            "href": "/studio/statistics"
+          }
+        ]
       }
     }
   }
