@@ -5,6 +5,9 @@
 	import { fade } from "svelte/transition";
   import tilt from "vanilla-tilt";
 
+	// Importing components
+	import Header from "../components/Layout/Header/index.svelte";
+
 	// Importing some components and then
 	// performing some needed actions
 	import profile from "../stores/profile.js";
@@ -27,6 +30,8 @@
 			};
 		}, 250);
 	});
+
+	let page = null;
 </script>
 
 <!-- Importing some fonts -->
@@ -55,6 +60,8 @@
 	</div>
 { :else }
 	<main style="z-index: 1; font-family: 'Manrope', sans-serif;" class="relative">
+		<Header />
+		
 		<slot></slot>
 	</main>
 { /if }

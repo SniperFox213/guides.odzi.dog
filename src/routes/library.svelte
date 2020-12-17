@@ -4,7 +4,7 @@
   import GuideCard from "../components/guideCard.svelte";
 
   import { onMount } from "svelte";
-  import { slide } from "svelte/transition";
+  import { fade, slide } from "svelte/transition";
 
   import profile from "../stores/profile.js";
 
@@ -116,6 +116,8 @@
 		},
   ];
   
+  let loaded = false;
+
   // onMount event
   onMount(() => {
     if (cookies.get("library__hide_tutorial")) {
@@ -124,15 +126,14 @@
   });
 
   let hideTutorial = false;
-</script>
 
-<!-- Header -->
-<Header page="library" />
+  export let page = "index";
+</script>
 
 <main class="min-h-screen w-full bg-gray-100 relative">
   <!-- Hero-Tutorial -->
   { #if !hideTutorial }
-    <section in:slide style="background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);" class="w-full pt-32 md:pt-0 pb-24 md:pb-0 h-auto md:h-screen flex justify-center items-center relative">
+    <section style="background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);" class="w-full pt-32 md:pt-0 pb-24 md:pb-0 h-auto md:h-screen flex justify-center items-center relative">
       <!-- Texts + Illustrations -->
       <div class="flex flex-col md:flex-row items-center relative px-4 md:px-16 lg:px-24">
         <!-- Illustration -->
