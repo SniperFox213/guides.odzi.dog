@@ -30,10 +30,10 @@
   });
 </script>
 
-<main transition:fade class="w-full h-screen bg-black flex flex-col items-center justify-center">
+<main style="z-index: 1001;" transition:fade class="w-full h-screen bg-white flex flex-col items-center justify-center">
   <!-- Logotype -->
-  <img style="height: 2rem;" src="./logotype/white-full.svg" alt="odzi.network logotype">
+  <img style="height: 2rem;" src="./logotype/black-full.svg" alt="odzi.network logotype">
 
   <!-- Text -->
-  <h1 class="text-sm text-white font-medium opacity-75 mt-4">Обрабатываем...</h1>
+  <h1 class="text-sm text-black font-medium opacity-75 mt-4">Обрабатываем...</h1>
 </main>

@@ -6,7 +6,7 @@
   import profile from "../../../../stores/profile.js";
 
   // Importing components
-  import UserPopover from "../components/UserIcon.svelte";
+  import UserPopover from "../components/UserPopover.svelte";
 
   // Exporting some variables
   export let page;

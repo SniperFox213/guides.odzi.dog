@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
   import { stores, goto } from "@sapper/app";
   import profile from "../../../../stores/profile.js";
+  import settings from "../../../../stores/settings.js";
   import { fade, slide } from "svelte/transition";
 
   const { page } = stores();
@@ -10,7 +11,7 @@
   // Importing components
   import Divider from "../../../Extra/Divider.svelte";
   import Badge from "../../../Badge/index.svelte";
-  import UserIcon from "../components/UserIcon.svelte";
+  import UserPopover from "../components/UserPopover.svelte";
   import Button from "../../../Controls/Button/index.svelte";
 
   import ActionButton from "../../../Controls/ActionButton/index.svelte";
@@ -114,28 +115,55 @@
   { /if }
 
   <!-- HeaderMenu Icon -->
-  <div in:fade style="height: 8vh; z-index: 1;" class="absolute inset-0 w-full flex justify-center items-center">
-    <IconButton on:click={(e) => {
-      if (dashpage == null) {
-        dashpage = "dashboard";
-      } else {
-        dashpage = null;
-      };
-    }}>
-      { #if dashpage == null }  
-        <svg in:fade style="width: 1.2rem; height: 1.2rem;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-      { :else }
-        <svg in:fade style="width: 1.2rem; height: 1.2rem;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
-      { /if }
-    </IconButton>
-  </div>
+  { #if !$settings.minimalisticView }
+    <div in:fade style="height: 8vh; z-index: 1;" class="absolute inset-0 w-full flex justify-center items-center">
+      <IconButton on:click={(e) => {
+        if (dashpage == null) {
+          dashpage = "dashboard";
+        } else {
+          dashpage = null;
+        };
+      }}>
+        { #if dashpage == null }  
+          <svg in:fade style="width: 1.2rem; height: 1.2rem;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        { :else }
+          <svg in:fade style="width: 1.2rem; height: 1.2rem;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        { /if }
+      </IconButton>
+    </div>
+  { /if }
 
   { #if dashpage == null }
     <!-- Account -->
-    <div transition:fade style="z-index: 1;">
-      <UserIcon on:open={(e) => {
-        dashpage = "user";
-      }} />
+    <div transition:fade style="z-index: 1;" class="flex items-center">
+      <!-- Page Links -->
+      { #if $settings.minimalisticView }
+        <div class="hidden md:flex mr-2 text-sm text-black">
+          { #each pages as p }
+            { #if p.href != null && p.name != null }
+              <a class="transition duration-200 ease-in-out transform mx-2 hover:scale-105 hover:opacity-100 opacity-75" href="{ p.href }">{ p.name }</a>
+            { /if }
+          { /each }
+        </div>
+      { /if }
+
+      { #if $profile.id != 0 }
+        { #if $settings.minimalisticView }
+          <UserPopover />
+        { :else }
+          <button class="flex justify-center items-center">
+            <img class="w-8 h-8 rounded-full border-1 border-solid border-gray-300" src="{ $profile.avatar }" alt="">
+          </button>  
+        { /if }
+      { :else }
+        <IconButton classes="flex items-center" on:click={(e) => {
+          window.location.href = "https://authed.unfull.ml/callback?url=https://guides.odzi.dog/authorize/:token";
+        }}>
+          <svg style="height: 1.2rem; width: 1.2rem;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+        
+          <p class="text-sm ml-2">Авторизоваться</p>
+        </IconButton>
+      { /if }
     </div>
   { /if }
 </header>
@@ -223,6 +251,23 @@
           <!-- Account Buttons -->
           <div style="overflow-y: auto;" class="w-full flex-grow relative">
             <div class="absolute w-full h-auto px-5">
+              <button on:click={(e) => {
+                dashpage = null;
+                settings.changeSetting("minimalisticView", true);
+              }} in:fade class="my-3 w-full relative flex justify-start items-center p-3 rounded-md border-1 border-gray-200">
+                <!-- Icon -->
+                <img style="height: 1.2rem; width: 1.2rem;" src="./icons/test-tube.png" alt="Icon">
+
+                <!-- Texts -->
+                <div class="ml-3 text-left">
+                  <h1 class="text-sm text-black">Перейти в классический режим</h1>
+                  <p class="text-gray-800 text-xs">Более простой и классический режим сайта, понятный всем пользователям.</p>
+                </div>
+              </button>
+
+              <!-- Divider -->
+              <Divider type="vertical" color="gray-200" margin="y-4" />
+
               <!-- Activity Button -->
               <button in:fade class="my-3 w-full relative flex justify-start items-center p-3 rounded-md border-1 border-gray-200">
                 <!-- Icon -->
