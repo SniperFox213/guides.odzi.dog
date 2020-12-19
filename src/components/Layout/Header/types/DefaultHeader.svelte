@@ -108,7 +108,9 @@
   <!-- Logotype -->
   { #if dashpage == null }
     <slot name="left">
-      <div transition:fade style="z-index: 2;">
+      <div on:click={(e) => {
+        goto("/");
+      }} transition:fade style="z-index: 2;" class="cursor-pointer">
         <img style="height: 1.4rem;" src="./logotype/odzi-guides-black.svg" alt="odzi.guidse logotype" />
       </div>
     </slot>

@@ -14,7 +14,7 @@
 </script>
 
 <!-- Popover Itself -->
-<Popover arrow={ false } placement="bottom-end" bind:open={ isOpen } overlayColor="rgba(0,0,0,0)">
+<Popover arrow={ false } placement="bottom-end" bind:open={ isOpen } overlayColor="rgba(0,0,0,0.2)">
   <button slot="target">
     <button class="flex justify-center items-center">
       <img class="w-8 h-8 rounded-full border-1 border-solid border-gray-300" src="{ $profile.avatar }" alt="">

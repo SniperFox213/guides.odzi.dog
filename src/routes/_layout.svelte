@@ -3,7 +3,6 @@
 	import styles from "../components/styles.svelte";
 
 	import { fade } from "svelte/transition";
-  import tilt from "vanilla-tilt";
 
 	// Importing components
 	import Header from "../components/Layout/Header/index.svelte";

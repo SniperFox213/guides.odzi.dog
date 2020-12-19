@@ -6,6 +6,7 @@
   import { onMount } from "svelte";
   import { fade, slide } from "svelte/transition";
 
+  import tilt from "vanilla-tilt";
   import profile from "../stores/profile.js";
 
   import Cookie from "cookie-universal";
@@ -126,8 +127,6 @@
   });
 
   let hideTutorial = false;
-
-  export let page = "index";
 </script>
 
 <main class="min-h-screen w-full bg-gray-100 relative">
